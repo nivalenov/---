@@ -34,8 +34,80 @@
 </head>
 
 <body>
+    <div class="input-call">
+        <a href="#" class="gradient"></a>
+
+        <form class="input__form" aria-expanded="false">
+            <h2 class="input__form_title">Заказать звонок</h2>
+
+            <button class="input__form_close" aria-label="close">
+                <span></span>
+                <span></span>
+            </button>
+
+            <label class="input__form_input">
+                <span>Ваше имя</span>
+
+                <input type="text" name="Имя" placeholder="Имя" required>
+            </label>
+
+            <label class="input__form_input">
+                <span>Номер телефона</span>
+
+                <input type="tel" name="Телефон" placeholder="+7(___) ___-__-__" required>
+            </label>
+
+            <input class="input__form_submit" type="submit" value="Заказать звонок">
+
+            <label class="input__form_check">
+                <input type="checkbox" required>
+
+                <span>Нажатием на кнопку я даю свое согласие на обработку персональных данных в соответствии с указанными здесь условиями.</span>
+            </label>
+        </form>
+    </div>
+
+    <div class="input">
+        <div class="gradient"></div>
+
+        <form class="input__form" aria-expanded="false">
+            <h2 class="input__form_title">Узнать больше</h2>
+
+            <button class="input__form_close" aria-label="close">
+                <span></span>
+                <span></span>
+            </button>
+
+            <label class="input__form_input">
+                <span>Ваше имя</span>
+
+                <input type="text" name="Имя" placeholder="Имя" required>
+            </label>
+
+            <label class="input__form_input">
+                <span>Номер телефона</span>
+
+                <input type="tel" name="Телефон" placeholder="+7(___) ___-__-__" required>
+            </label>
+
+            <label class="input__form_input">
+                <span>Электронная почта</span>
+
+                <input type="email" name="Почта" placeholder="email" required>
+            </label>
+
+            <input class="input__form_submit" type="submit" value="Отправить">
+
+            <label class="input__form_check">
+                <input type="checkbox" required>
+
+                <span>Нажатием на кнопку я даю свое согласие на обработку персональных данных в соответствии с указанными здесь условиями.</span>
+            </label>
+        </form>
+    </div>
+
     <header>
-        <div class="header-container">          
+        <div class="header-container">              
             <div class="header-menu__container fixed-container clearfix">
                 <nav class="header-menu__menu">
                     <ul>
@@ -303,6 +375,8 @@
     </footer>
 
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+
+    <script src="script/jquery.inputmask.min.js"></script>
 
     <script src="script/swiper.min.js"></script>
 

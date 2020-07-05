@@ -648,6 +648,23 @@
 
         margin-top: 33px;
     }
+
+    .input__form {
+        width: 100%;
+
+        font-size: 16px;
+    }
+
+    .input__form_close {
+        width: 20px;
+        height: 20px;
+
+        right: 20px;
+    }
+
+    .input__form_close span {
+        width: 20px;
+    }
 }
 
 /* ------------------------------------------ Экран 360 */
@@ -690,6 +707,23 @@
     .footer__container {
         padding-top: 47px;
         padding-bottom: 48px;
+    }
+
+    .input__form {
+        font-size: 14px;
+    }
+
+    .input__form_submit {
+        font-size: 16px;
+    }
+
+    .input__form_check span::before {
+        width: 16px;
+        height: 16px;
+    }
+
+    .input__form_input span {
+        display: none;
     }
 }
 
