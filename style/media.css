@@ -60,11 +60,7 @@
     .element-10 {
         right: 600px;
     }
-}
 
-/* ------------------------------------------ Экран 1200 */
-
-@media (max-width: 1200px) {
     .header-menu__telefone {
         flex-basis: 32%;
     }
@@ -95,14 +91,50 @@
         display: none;
     }
 
+    @keyframes element-3 {
+        from {
+            left: 200px;
+            top: 350px;   
+        }
+    
+        to {
+            left: 360px;
+            top: 459px;
+        }
+    }
+
     .element-3 {
         left: 360px;
         top: 459px;
     }
 
+    @keyframes element-4 {
+        from {
+            left: 200px;
+            top: 350px;   
+        }
+    
+        to {
+            left: 58px;
+            top: 506px;
+        }
+    }
+
     .element-4 {
         left: 58px;
         top: 506px;
+    }
+
+    @keyframes element-5 {
+        from {
+            left: 200px;
+            top: 350px;   
+        }
+    
+        to {
+            left: 77px;
+            top: 26px;
+        }
     }
 
     .element-5 {
@@ -148,46 +180,39 @@
         }
     }
 
-    .element-1 {
-        display: inline-block;
-
-        left: 887px;
-        top: 22px;
-    }
-
     @keyframes element-3 {
         from {
             left: 160px;
-            top: 350px;
+            top: 300px;
         }
     
         to {
             left: 360px;
-            top: 459px;
+            top: 359px;
         }
     }
 
     @keyframes element-4 {
         from {
             left: 140px;
-            top: 350px;
+            top: 300px;
         }
     
         to {
             left: 58px;
-            top: 506px;
+            top: 350px;
         }
     }
 
     @keyframes element-5 {
         from {
             left: 100px;
-            top: 350px;
+            top: 300px;
         }
     
         to {
             left: 77px;
-            top: 26px;
+            top: 10px;
         }
     }
     
@@ -230,13 +255,6 @@
         font-size: 38px;
     }
 
-    .element-10 {
-        right: 453px;
-        top: 308px;
-
-        font-size: 25px;
-    }
-
     .footer__container {
         padding-top: 99px;
     }
@@ -248,11 +266,7 @@
     .footer__contacts {
         padding-left: 22px;
     }
-}
 
-/* ------------------------------------------ Экран 960 */
-
-@media (max-width: 960px) {
     .header-menu__telefone {
         flex-basis: 60%;
     }   
@@ -411,6 +425,34 @@
     .footer__contacts {
         font-size: 15px;
     }
+
+    .element-3 {
+        display: none;
+    }
+
+    @keyframes element-4 {
+        from {
+            left: 300px;
+            top: 550px;
+        }
+    
+        to {
+            left: 58px;
+            top: 350px;
+        }
+    }
+
+    @keyframes element-5 {
+        from {
+            left: 300px;
+            top: 550px;
+        }
+    
+        to {
+            left: 77px;
+            top: 10px;
+        }
+    }
 }
 
 /* ------------------------------------------ Экран 640 */
@@ -466,20 +508,39 @@
         display: none;
     }
 
-    .element-2 {
-        display: inline-block;
+    .element-3 {
+        display: block;
+    }
 
-        left: 404px;
-        top: 0px;
-
-        font-size: 17px;
+    @keyframes element-3 {
+        from {
+            left: 300px;
+            top: 550px;
+        }
+    
+        to {
+            left: 250px;
+            top: -50px;
+        }
     }
 
     .element-3 {
         left: 250px;
         top: -50px;
 
-        font-size: 19px;
+        font-size: 30px;
+    }
+
+    @keyframes element-4 {
+        from {
+            left: 300px;
+            top: 550px;
+        }
+    
+        to {
+            left: 38px;
+            top: 55px;
+        }
     }
 
     .element-4 {
@@ -487,6 +548,18 @@
         top: 55px;
 
         font-size: 30px;
+    }
+
+    @keyframes element-5 {
+        from {
+            left: 300px;
+            top: 550px;
+        }
+    
+        to {
+            left: 48px;
+            top: -54px;
+        }
     }
 
     .element-5 {
@@ -608,11 +681,7 @@
 
         padding: 25px 0 20px 0;
     }
-}
 
-/* ------------------------------------------ Экран 480 */
-
-@media (max-width: 480px) {
     .header-menu__call {
         display: none; 
     }
@@ -664,6 +733,10 @@
 
     .input__form_close span {
         width: 20px;
+    }
+
+    .agree__form {
+        font-size: 16px;
     }
 }
 
@@ -717,13 +790,40 @@
         font-size: 16px;
     }
 
-    .input__form_check span::before {
-        width: 16px;
-        height: 16px;
-    }
-
     .input__form_input span {
         display: none;
+    }
+
+    @keyframes element-3 {
+        from {
+            left: 160px;
+            top: 450px;
+        }
+    
+        to {
+            left: 250px;
+            top: -50px;
+        }
+    }
+
+    .element-4 {
+        display: none;
+    }
+
+    @keyframes element-5 {
+        from {
+            left: 100px;
+            top: 450px;
+        }
+    
+        to {
+            left: 48px;
+            top: -54px;
+        }
+    }
+
+    .agree__form {
+        font-size: 14px;
     }
 }
 
@@ -773,11 +873,6 @@
         }
     }
 
-    .element-2 {
-        left: 244px;
-        top: -2px;
-    }
-
     @keyframes element-3 {
         from {
             left: 160px;
@@ -795,6 +890,10 @@
         top: -65px;
     }
 
+    .element-4 {
+        display: block;
+    }
+
     @keyframes element-4 {
         from {
             left: 140px;
@@ -804,18 +903,6 @@
         to {
             left: 38px;
             top: 55px;
-        }
-    }
-
-    @keyframes element-5 {
-        from {
-            left: 100px;
-            top: 450px;
-        }
-    
-        to {
-            left: 48px;
-            top: -54px;
         }
     }
 

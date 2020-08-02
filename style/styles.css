@@ -135,189 +135,6 @@ body {
     border-bottom-width: 1px;
 }
 
-/* ============== INPUT ======================================================== */
-
-.input-call, .input {
-    position: absolute;
-
-    display: none;
-    justify-content: center;
-    flex-direction: column;
-
-    width: 100%;
-    height: 100%;
-}
-
-.gradient {
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0),rgb(0, 0, 0));
-    z-index: 4;
-
-    cursor: auto;
-}
-
-.input__form {
-    position: relative;
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-
-    width: 500px;
-
-    padding: 40px;
-
-    font-size: 18px;
-    color: white;
-
-    background: linear-gradient(13deg, #ff8f5a 0%, #ff2f96 99%, #ff2f96 100%);
-
-    border-radius: 10px;
-
-    opacity: 1;
-
-    z-index: 5;
-}
-
-.input__form_close {
-    position: absolute;
-
-    top: 20px;
-    right: 30px;
-
-    height: 30px;
-	width: 30px;
-
-    background: linear-gradient(13deg, #ff2f96 0%, #ff2f96 99%, #ff2f96 100%);
-    
-    border: none;
-
-    cursor: pointer;
-}
-
-.input__form_close span {
-    display: block;
-
-    margin-bottom: -4px;
-
-    height: 4px;
-    width: 30px;
-    
-    background: white;
-}
-
-.input__form_close :nth-child(1) {
-	transform: rotate(45deg);
-
-	top: 12px;
-}
-
-.input__form_close :nth-child(2) {
-	transform: rotate(-45deg);
-}
-
-.input__form_title {
-    visibility: hidden;
-}
-
-.input__form_input {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin-bottom: 30px;
-}
-
-.input__form_input input {
-    padding: 10px;
-
-    border-radius: 5px;
-    border: none;
-}
-
-.input__form_submit {
-    padding: 20px;
-
-    color: #f53f4f;
-    background-color: #fbfbfb;
-
-    border-color: #f53f4f;
-    border-width: 1px;
-    
-    font-size: 18px;
-    font-weight: 400;
-
-    cursor: pointer;
-    outline: none;
-}
-
-.input__form_submit:hover {
-    background-color: #ff4e2e;
-    color: #fbfbfb;
-}
-
-.input__form_check {
-    margin-top: 20px;
-}
-
-.input__form_check input {
-    display: none;
-}
-
-.input__form_check input:checked + span:after {
-    opacity: 1;
-    transition: opacity 0.3s;
-}
-
-.input__form_check span {
-    position: relative;
-
-    width: 100%;
-
-    display: inline-block;
-
-    padding-left: 30px;
-}
-
-.input__form_check span::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    width: 20px;
-    height: 20px;
-
-    background-color: #fff;
-
-    border-radius: 4px;
-}
-
-.input__form_check span::after {
-    content: "\2713";
-
-    position: absolute;
-
-    left: 4px;
-    top: 0;
-
-    width: 20px;
-    height: 20px;
-
-    color: #ff5405;
-
-    border-radius: 4px;
-
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
 /* ============== BURGER ======================================================== */
 
 .header-menu__burger-menu {
@@ -413,22 +230,12 @@ body {
     padding-left: 38px;
 }
 
-.menu__list_services:hover {
+.menu__list_services:hover, .menu__list_portfolio:hover, .menu__list_price:hover {
     color: #241a1a;
     
     border-bottom: 1px solid #241a1a;
-}
 
-.menu__list_portfolio:hover {
-    color: #241a1a;
-    
-    border-bottom: 1px solid #241a1a;
-}
-
-.menu__list_price:hover {
-    color: #241a1a;
-    
-    border-bottom: 1px solid #241a1a;
+    transition: color 0.3s;
 }
 
 /* ============== CONTACTS ======================================================== */
@@ -469,6 +276,8 @@ body {
 .header-menu__call:hover {
     background-color: #ff4e2e;
     color: #fbfbfb;
+
+    transition: color 0.3s;
 }
 
 .header-menu__call-mobile {
@@ -483,6 +292,8 @@ body {
 
 .header-menu__call-mobile:hover {
     filter: drop-shadow(0 0 10px rgba(231, 82, 23, 0.35));
+
+    transition: color 0.3s;
 }
 
 .header-menu__call-mobile figure {
@@ -574,6 +385,8 @@ body {
     border: 1px solid #ff4e2e;
 
     padding: 18px 70px 18px 71px;
+
+    transition: color 0.3s;
 }
 
 .presentation__foto {
@@ -618,6 +431,8 @@ body {
     background: linear-gradient(to top, #f26522 0%, #fa0891 99%, #fa0891 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;  
+
+    z-index: 1;
 }
 
 @keyframes element-1 {
@@ -834,6 +649,8 @@ body {
     border: 1px solid #ff4e2e;
 
     padding: 18px 58px 18px 58px;
+
+    transition: color 0.3s;
 }
 
 /* ============== EXAMPLES BLOCK ======================================================== */
@@ -896,10 +713,14 @@ body {
     border: 1px solid #ff4e2e;
 
     padding: 18px 65px 18px 65px;
+
+    transition: color 0.3s;
 }
 
 .examples__works_picture:hover {
     filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+
+    transition: color 0.3s;
 }
 
 /* ============== SWIPER ======================================================== */
@@ -932,18 +753,16 @@ body {
     left: -30px;
 }
 
-.swiper-button-prev:hover {
+.swiper-button-prev:hover, .swiper-button-next:hover {
     filter: drop-shadow(0 0 10px rgba(0,0,0,0.75));
+
+    transition: color 0.3s;
 }
 
 .swiper-button-next {
     right: -30px;
 
     transform: rotate(180deg);
-}
-
-.swiper-button-next:hover {
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.75));
 }
 
 .swiper-pagination {
@@ -968,6 +787,8 @@ body {
     background: #ff4e2e;
 
     z-index: 2;
+
+    transition: color 0.3s;
 }
 
 .swiper-pagination :nth-child(3) {
@@ -1112,25 +933,13 @@ body {
     padding-bottom: 16px;
 }
 
-.footer__services :hover {
+.footer__services :hover, .footer__portfolio :hover, .footer__price :hover {
     color: #fc557c;
 
     border-bottom-style: solid;
     border-bottom-width: 1px;
-}
 
-.footer__portfolio :hover {
-    color: #fc557c;
-
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-}
-
-.footer__price :hover {
-    color: #fc557c;
-
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
+    transition: color 0.3s;
 }
 
 /* ============== FOOTER CONTACTS ======================================================== */
@@ -1179,16 +988,12 @@ body {
     font-weight: normal;
 }
 
-.telefone:hover {
+.telefone:hover, .malito:hover, .header-menu__telefone:hover {
     background: linear-gradient(to top, #f26522 0%, #fa0891 99%, #fa0891 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
 
-.malito:hover {
-    background: linear-gradient(to top, #f26522 0%, #fa0891 99%, #fa0891 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    transition: color 0.3s;
 }
 
 /* ============== FOOTER SOCIAL ======================================================== */
@@ -1219,6 +1024,8 @@ body {
 .footer__call:hover {
     background-color: #ff4e2e;
     color: #fbfbfb;
+
+    transition: color 0.3s;
 }
 
 .footer__social {
@@ -1245,32 +1052,22 @@ body {
     background-position: -10px -5px;
 }
 
-.icon-vk:hover {
+.icon-vk:hover, .icon-facebook:hover, .icon-twitter:hover, .icon-instagram:hover {
     filter: drop-shadow(0 0 10px rgba(0,0,0,0.75));
+
+    transition: color 0.3s;
 }
 
 .icon-facebook {
     background-position: -100px -10px;
 }
 
-.icon-facebook:hover {
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.75));
-}
-
 .icon-twitter {
     background-position: -10px -48px;
-}
-
-.icon-twitter:hover {
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.75));
 }
     
 .icon-instagram {
     background-position: -60px -7px;
-}
-
-.icon-instagram:hover {
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.75));
 }
 
 /* ============== COPYRIGHT ======================================================== */
@@ -1286,4 +1083,192 @@ body {
 
     font-size: 16px;
     color: #ffffff;
+}
+
+/* ============== INPUT ======================================================== */
+
+.input-call, .input, .input-out, .agree-block {
+    position: absolute;
+
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 5;
+}
+
+.gradient, .agree__gradient {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0),rgb(0, 0, 0));
+
+    z-index: 4;
+
+    cursor: auto;
+}
+
+.input__form_block, .agree__form_block {
+    position: relative;
+    margin: 0 auto;
+
+    width: 500px;
+    max-width: 100%;
+    max-height: 100%;  
+}
+
+.agree__form_block {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.input__form, .agree__form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    max-height: 100%;
+
+    padding: 40px;
+    padding-top: 60px;
+
+    font-size: 18px;
+    color: #ffffff;
+    background: linear-gradient(13deg, #ff8f5a 0%, #ff2f96 99%, #ff2f96 100%);
+
+    border-radius: 10px;
+
+    z-index: 5;  
+
+    overflow: auto;
+}
+
+.agree__form {
+    color: #080808;
+    background: #ffffff;
+}
+
+.agree__form span {
+    margin-bottom: 15px;
+}
+
+.agree__form a {
+    color: #2f00ff;
+    border-bottom: 1px solid;
+}
+
+.input__form_title {
+    visibility: hidden;
+    
+    height: 0;
+}
+
+.agree__form_title {
+    margin-bottom: 20px;
+}
+
+.input__form_close, .agree__form_close {
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    height: 30px;
+	width: 30px;
+
+    background: linear-gradient(13deg, #ff2f96 0%, #ff2f96 99%, #ff2f96 100%);
+    
+    border: none;
+
+    cursor: pointer;
+
+    z-index: 6;
+}
+
+.agree__form_close {
+    background: #ffffff;
+}
+
+.input__form_close span, .agree__form_close span {
+    display: block;
+
+    margin-bottom: -4px;
+
+    height: 4px;
+    width: 30px;
+    
+    background: #ffffff;
+}
+
+.agree__form_close span {
+    background: #000000;
+}
+
+.input__form_close :nth-child(1), .agree__form_close :nth-child(1) {
+	transform: rotate(45deg);
+
+	top: 12px;
+}
+
+.input__form_close :nth-child(2), .agree__form_close :nth-child(2) {
+	transform: rotate(-45deg);
+}
+
+.input__form_input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.input__form_input input {
+    padding: 10px;
+
+    border-radius: 5px;
+    border: none;
+}
+
+.input__form_submit {
+    padding: 20px;
+
+    color: #f53f4f;
+    background-color: #fbfbfb;
+
+    border-color: #f53f4f;
+    border-width: 1px;
+    
+    font-size: 18px;
+    font-weight: 400;
+
+    cursor: pointer;
+    outline: none;
+}
+
+.input__form_submit:hover {
+    background-color: #ff4e2e;
+    color: #fbfbfb;
+
+    transition: color 0.3s;
+}
+
+.input__form span {
+    margin-top: 20px;
+}
+
+.error {
+    background: #ff0000;
+    border: 2px solid #262626 !important;
+}
+
+.agree {
+    color: #ff1e1e;
+    border-bottom: 1px solid;
+
+    cursor: pointer;
 }

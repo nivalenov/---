@@ -37,12 +37,16 @@ $(function() {
     const proekt = $('.examples__order');
     const closecallform = $('.input__form_close');
     const gradient = $('.gradient');
+    const agree = $('.agree');
+    const closecAgree = $('.agree__form_close');
 
     function openFormCall() {
       let form = $('.input-call');
       let pagePosition = window.scrollY;
       let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
-      
+      let expanded = $('.input__form_block');
+       
+      form.fadeIn();
       form.css('display', 'flex'); 
 
       $('body').addClass('fixed');
@@ -51,14 +55,18 @@ $(function() {
       document.body.dataset.position = pagePosition;
       document.body.style.top = -pagePosition + 'px';
       form.css('top', pagePosition + 'px');
+
+      expanded.attr('aria-expanded', 'true');
     }
 
     function openFormEmail() {
       let form = $('.input');
       let pagePosition = window.scrollY;
       let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
-           
-      form.css('display', 'flex'); 
+      let expanded = $('.input__form_block');
+            
+      form.fadeIn();
+      form.css('display', 'flex');
 
       $('body').addClass('fixed');
 
@@ -66,15 +74,20 @@ $(function() {
       document.body.dataset.position = pagePosition;
       document.body.style.top = -pagePosition + 'px';
       form.css('top', pagePosition + 'px');
+
+      expanded.attr('aria-expanded', 'true');
     }
 
     function closeForm() {
-      let form = $('.input-call');
-      let form2 = $('.input');
+      let formCall = $('.input-call');
+      let formMail = $('.input');
+      let formMessage = $('.input-out');
       let pagePosition = parseInt(document.body.dataset.position, 10);
+      let expanded = $('.input__form_block');
             
-      form.css('display', 'none');
-      form2.css('display', 'none');  
+      formCall.css('display', 'none');
+      formMail.css('display', 'none');  
+      formMessage.css('display', 'none');
       
       $('body').removeClass('fixed');
      
@@ -82,6 +95,55 @@ $(function() {
       document.body.style.top = 'auto';
       window.scroll({top: pagePosition, left: 0});
       document.body.removeAttribute('data-position');
+
+      expanded.attr('aria-expanded', 'false');
+    }
+
+    function closeAgree() {
+      let formAgree = $('.agree-block');
+      let expanded = $('.agree__form_block');
+            
+      formAgree.css('display', 'none');
+
+      expanded.attr('aria-expanded', 'false');
+    }
+
+    function openWinowMessage() {
+      let form = $('.input-out');
+      let pagePosition = window.scrollY;
+      let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+      let expanded = $('.input__form_block');
+            
+      form.fadeIn();
+      form.css('display', 'flex');
+
+      $('body').addClass('fixed');
+
+      document.body.style.paddingRight = paddingOffset;
+      document.body.dataset.position = pagePosition;
+      document.body.style.top = -pagePosition + 'px';
+      form.css('top', pagePosition + 'px');
+
+      expanded.attr('aria-expanded', 'true');
+    }
+
+    function openWinowAgree() {
+      let form = $('.agree-block');
+      let pagePosition = window.scrollY;
+      let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+      let expanded = $('.agree__form_block');
+            
+      form.fadeIn();
+      form.css('display', 'flex');
+
+      $('body').addClass('fixed');
+
+      document.body.style.paddingRight = paddingOffset;
+      document.body.dataset.position = pagePosition;
+      document.body.style.top = -pagePosition + 'px';
+      form.css('top', pagePosition + 'px');
+
+      expanded.attr('aria-expanded', 'true');
     }
 
     callform.on('click', function(event){
@@ -118,6 +180,18 @@ $(function() {
       event.preventDefault();
             
       openFormEmail();
+    });
+
+    agree.on('click', function(event){
+      event.preventDefault();
+            
+      openWinowAgree();
+    });
+
+    closecAgree.on('click', function(event){
+      event.preventDefault();
+
+      closeAgree();
     });
 
     closecallform.on('click', function(event){
@@ -173,4 +247,51 @@ $(function() {
     });  
 
     $('input[type="tel"]').inputmask({"mask": "+7 (999) 999-9999"});
+
+    $('.input__form').each(function(){
+      $(this).validate({
+        errorPlacement(error, element) {
+          return true;
+        },
+
+        focusInvalid: false,
+
+        rules: {
+          Имя: {
+            required: true,
+            minlength: 3,
+          },
+
+          Телефон: {
+            required: true,
+          },
+
+          Почта: {
+            required: true,
+            email: true,
+          },
+
+          Чек: {
+            required: true,
+          },
+        },
+
+        submitHandler(form) {
+          let th = $(form);
+    
+          $.ajax({
+            type: 'POST',
+            url: 'mail.php',
+            data: th.serialize(),
+          }).done(() => {
+            closeForm();
+            openWinowMessage();
+
+            th.trigger('reset');
+          });
+    
+          return false;
+        }       
+      });
+    });   
 });
