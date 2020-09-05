@@ -31,6 +31,6 @@ function adopt($text) {
 
 $headers = "MIME-Version: 1.0\r\n".
 	"Content-type: text/html; charset-utf-8\r\n".
-	"Return-Path: adminemail@yahoo.com";
+	"Return-Path: webprog.working@gmail.com";
 
 mail($admin_email, adopt($form_subject), $message, $headers );
